@@ -36,6 +36,7 @@
             line-height: 1.6;
         }
 
+        /* Top Bar */
         .top-bar {
             background: var(--secondary);
             color: #ecfdf5;
@@ -48,9 +49,16 @@
             gap: 10px;
         }
 
-        .top-info span { margin-right: 20px; }
-        .top-info i { color: var(--accent); margin-right: 5px; }
+        .top-info span {
+            margin-right: 20px;
+        }
 
+        .top-info i {
+            color: var(--accent);
+            margin-right: 5px;
+        }
+
+        /* Navbar */
         nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -109,7 +117,9 @@
             transition: var(--transition);
         }
 
-        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
 
         .cta-btn {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -130,6 +140,7 @@
             box-shadow: 0 6px 18px rgba(16, 185, 129, 0.4);
         }
 
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
             color: white;
@@ -137,6 +148,14 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.15) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .hero h2 {
@@ -174,6 +193,7 @@
             gap: 8px;
         }
 
+        /* Section Title */
         .section-header {
             text-align: center;
             margin-bottom: 40px;
@@ -199,6 +219,7 @@
             border-radius: 2px;
         }
 
+        /* Catalog Section Container */
         .catalog-container {
             max-width: 1280px;
             margin: -40px auto 80px;
@@ -207,6 +228,7 @@
             z-index: 10;
         }
 
+        /* Category Bars Grid (6 Main Category Bars) */
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -217,7 +239,7 @@
         .category-card {
             background: var(--card-bg);
             border-radius: 20px;
-            padding: 35px 28px;
+            padding: 30px 28px;
             box-shadow: var(--shadow);
             border: 1px solid var(--border);
             cursor: pointer;
@@ -232,7 +254,10 @@
         .category-card::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 5px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
             background: linear-gradient(90deg, var(--primary), var(--accent));
             opacity: 0;
             transition: var(--transition);
@@ -244,7 +269,9 @@
             border-color: rgba(16, 185, 129, 0.4);
         }
 
-        .category-card:hover::after { opacity: 1; }
+        .category-card:hover::after {
+            opacity: 1;
+        }
 
         .card-top {
             display: flex;
@@ -254,15 +281,15 @@
         }
 
         .cat-icon-box {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             border-radius: 16px;
             background: #ecfdf5;
             color: var(--primary-dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             transition: var(--transition);
         }
 
@@ -283,16 +310,16 @@
         }
 
         .cat-title {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 700;
             color: var(--dark);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .cat-desc {
             color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             line-height: 1.5;
         }
 
@@ -302,7 +329,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             transition: var(--transition);
         }
 
@@ -311,6 +338,7 @@
             color: var(--primary);
         }
 
+        /* Products Listing View (Appears on Category Click) */
         .products-view {
             display: none;
             background: var(--card-bg);
@@ -382,6 +410,7 @@
             font-weight: 600;
         }
 
+        /* Search Box */
         .search-box {
             position: relative;
             width: 100%;
@@ -412,9 +441,10 @@
             font-size: 1rem;
         }
 
+        /* Product Cards Grid (Clean Layout without WhatsApp Buttons on Every Card) */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 20px;
         }
 
@@ -422,11 +452,12 @@
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 16px;
-            padding: 22px;
+            padding: 20px;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
+            position: relative;
         }
 
         .product-card:hover {
@@ -441,7 +472,7 @@
             font-weight: 700;
             color: var(--primary-dark);
             background: #d1fae5;
-            padding: 3px 8px;
+            padding: 3px 10px;
             border-radius: 6px;
             width: fit-content;
             margin-bottom: 12px;
@@ -451,30 +482,10 @@
             font-size: 1.05rem;
             font-weight: 700;
             color: var(--dark);
-            margin-bottom: 15px;
-            line-height: 1.4;
+            line-height: 1.45;
         }
 
-        .prod-inquire-btn {
-            background: #25d366;
-            color: white;
-            text-decoration: none;
-            padding: 8px 14px;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            transition: var(--transition);
-        }
-
-        .prod-inquire-btn:hover {
-            background: #128c7e;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
-        }
-
+        /* About Section */
         .about-section {
             background: white;
             padding: 80px 5%;
@@ -507,6 +518,7 @@
             font-size: 0.95rem;
         }
 
+        /* Footer */
         footer {
             background: var(--dark);
             color: #94a3b8;
@@ -541,7 +553,9 @@
             transition: var(--transition);
         }
 
-        .footer-col a:hover { color: var(--primary); }
+        .footer-col a:hover {
+            color: var(--primary);
+        }
 
         .footer-bottom {
             text-align: center;
@@ -550,6 +564,7 @@
             font-size: 0.85rem;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             .hero h2 { font-size: 2rem; }
             .hero p { font-size: 1rem; }
@@ -563,6 +578,7 @@
 </head>
 <body>
 
+    <!-- 1. Top Bar -->
     <div class="top-bar">
         <div class="top-info">
             <span><i class="fa-solid fa-location-dot"></i> Hapur, Uttar Pradesh, India</span>
@@ -573,6 +589,7 @@
         </div>
     </div>
 
+    <!-- 2. Navbar with Logo & Strategic WhatsApp Button #1 -->
     <nav>
         <a href="#" class="logo-container">
             <img src="logo.png" alt="PCI Logo" class="logo-img" onerror="this.style.display='none'">
@@ -587,11 +604,13 @@
             <li><a href="#about">About PCI</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <!-- WHATSAPP LOCATION #1 -->
         <a href="https://wa.me/919837000000?text=Hello%20Pesticides%20Chemical%20India%20Team,%20I%20have%20an%20inquiry." class="cta-btn" target="_blank">
             <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
         </a>
     </nav>
 
+    <!-- 3. Hero Section -->
     <section class="hero" id="hero">
         <h2>Pesticides Chemical India</h2>
         <p>Manufacturer, Formulator & Exporter of High-Grade Insecticides, Fungicides, Herbicides, PGRs & Rodenticides.</p>
@@ -602,16 +621,20 @@
         </div>
     </section>
 
+    <!-- 4. Interactive Catalog Section -->
     <section class="catalog-container" id="catalog">
         
+        <!-- SECTION TITLE -->
         <div class="section-header" id="section-header-box">
             <h3>Explore Our Product Categories</h3>
-            <p>Click on any category below to reveal the full product listings</p>
+            <p>Click on any category bar below to view all products in that category</p>
             <div class="title-bar"></div>
         </div>
 
+        <!-- CATEGORIES BARS GRID (6 Category Bars) -->
         <div class="categories-grid" id="categories-grid">
             
+            <!-- Category Bar 1: Insecticides -->
             <div class="category-card" onclick="showCategory('INSECTICIDES', '🐛 Insecticides')">
                 <div>
                     <div class="card-top">
@@ -621,9 +644,10 @@
                     <div class="cat-title">Insecticides</div>
                     <div class="cat-desc">Comprehensive solutions for pest control including EC, SC, SP, WG, and GR formulations.</div>
                 </div>
-                <div class="cat-action">Explore 75 Insecticides <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="cat-action">View 75 Insecticides <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
+            <!-- Category Bar 2: Fungicides -->
             <div class="category-card" onclick="showCategory('FUNGICIDES', '🍄 Fungicides')">
                 <div>
                     <div class="card-top">
@@ -633,9 +657,10 @@
                     <div class="cat-title">Fungicides</div>
                     <div class="cat-desc">Advanced crop protection formulas against fungal diseases, rusts, and leaf blights.</div>
                 </div>
-                <div class="cat-action">Explore 23 Fungicides <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="cat-action">View 23 Fungicides <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
+            <!-- Category Bar 3: Herbicides / Weedicides -->
             <div class="category-card" onclick="showCategory('HERBICIDES', '🌾 Herbicides & Weedicides')">
                 <div>
                     <div class="card-top">
@@ -645,9 +670,10 @@
                     <div class="cat-title">Herbicides & Weedicides</div>
                     <div class="cat-desc">Selective and non-selective weed control solutions for all major agricultural crops.</div>
                 </div>
-                <div class="cat-action">Explore 21 Herbicides <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="cat-action">View 21 Herbicides <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
+            <!-- Category Bar 4: Plant Growth Regulators (PGR) -->
             <div class="category-card" onclick="showCategory('PGR', '🌱 Plant Growth Regulators (PGR)')">
                 <div>
                     <div class="card-top">
@@ -657,9 +683,10 @@
                     <div class="cat-title">Plant Growth Regulators</div>
                     <div class="cat-desc">Growth stimulants, flower boosters, and yield enhancers engineered for maximum output.</div>
                 </div>
-                <div class="cat-action">Explore 6 PGRs <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="cat-action">View 6 PGRs <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
+            <!-- Category Bar 5: Rodenticides -->
             <div class="category-card" onclick="showCategory('RODENTICIDES', '🐀 Rodenticides')">
                 <div>
                     <div class="card-top">
@@ -669,9 +696,10 @@
                     <div class="cat-title">Rodenticides</div>
                     <div class="cat-desc">Fast-acting rodent control baits and powders for fields, grain stores, and warehouses.</div>
                 </div>
-                <div class="cat-action">Explore 4 Rodenticides <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="cat-action">View 4 Rodenticides <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
+            <!-- Category Bar 6: Antibiotic -->
             <div class="category-card" onclick="showCategory('ANTIBIOTIC', '🧪 Agricultural Antibiotics')">
                 <div>
                     <div class="card-top">
@@ -681,11 +709,12 @@
                     <div class="cat-title">Antibiotics</div>
                     <div class="cat-desc">Specialized anti-bacterial formulation for crop protection and disease management.</div>
                 </div>
-                <div class="cat-action">Explore Antibiotics <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="cat-action">View Antibiotics <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
         </div>
 
+        <!-- PRODUCTS LISTING VIEW (Appears when a category bar is clicked) -->
         <div class="products-view" id="products-view">
             <div class="products-header">
                 <div>
@@ -702,11 +731,14 @@
                 </div>
             </div>
 
-            <div class="products-grid" id="products-grid"></div>
+            <div class="products-grid" id="products-grid">
+                <!-- Products inserted dynamically via JS -->
+            </div>
         </div>
 
     </section>
 
+    <!-- 5. About Section -->
     <section class="about-section" id="about">
         <div class="section-header">
             <h3>Why Choose Pesticides Chemical India?</h3>
@@ -729,6 +761,7 @@
         </div>
     </section>
 
+    <!-- 6. Footer with Strategic WhatsApp Button #2 -->
     <footer id="contact">
         <div class="footer-grid">
             <div class="footer-col">
@@ -751,6 +784,7 @@
                 <h4>Quick Inquiries</h4>
                 <p>Email: pesticideschemicalindia@gmail.com</p>
                 <p>Location: Hapur, UP, India</p>
+                <!-- WHATSAPP LOCATION #2 -->
                 <p style="margin-top:15px;">
                     <a href="https://wa.me/919837000000?text=Hello%20PCI%20Team" class="cta-btn" target="_blank" style="padding: 8px 16px; font-size: 0.85rem;">
                         <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
@@ -763,6 +797,7 @@
         </div>
     </footer>
 
+    <!-- EMBEDDED PRODUCTS DATA & INTERACTIVE SCRIPT -->
     <script>
         const PRODUCTS_DATA = {
   "INSECTICIDES": [
@@ -860,17 +895,9 @@
                 const card = document.createElement('div');
                 card.className = 'product-card';
                 
-                const waMsg = encodeURIComponent(`Hello Pesticides Chemical India team, I want to inquire about: ${item}`);
-                const waLink = `https://wa.me/919837000000?text=${waMsg}`;
-
                 card.innerHTML = `
-                    <div>
-                        <div class="prod-num">Item #${index + 1}</div>
-                        <div class="prod-name">${item}</div>
-                    </div>
-                    <a href="${waLink}" target="_blank" class="prod-inquire-btn">
-                        <i class="fa-brands fa-whatsapp"></i> Inquire Price
-                    </a>
+                    <div class="prod-num">Item #${index + 1}</div>
+                    <div class="prod-name">${item}</div>
                 `;
                 grid.appendChild(card);
             });
