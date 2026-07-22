@@ -1,639 +1,887 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pesticides Chemical India (PCI) | Manufacturer & Formulator</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --pci-red: #d32f2f;
-      --pci-green: #2e7d32;
-      --pci-gold: #f57c00;
-      --dark-gray: #1a1a1a;
-      --light-gray: #f8f9fa;
-      --white: #ffffff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesticides Chemical India | Official Agro-Chemical Manufacturer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #065f46;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-    body {
-      color: #333;
-      line-height: 1.6;
-      background-color: var(--white);
-    }
+        body {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-    /* Top Bar */
-    .top-bar {
-      background-color: var(--dark-gray);
-      color: var(--white);
-      padding: 8px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.9rem;
-    }
+        .top-bar {
+            background: var(--secondary);
+            color: #ecfdf5;
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-    .top-bar a {
-      color: var(--white);
-      text-decoration: none;
-      margin-left: 15px;
-    }
+        .top-info span { margin-right: 20px; }
+        .top-info i { color: var(--accent); margin-right: 5px; }
 
-    .top-bar a:hover {
-      color: var(--pci-gold);
-    }
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    /* Navigation */
-    header {
-      position: sticky;
-      top: 0;
-      background: var(--white);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 5%;
-    }
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 6px;
+        }
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+        .logo-text h1 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--secondary);
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
 
-    .logo-container img {
-      height: 60px;
-      width: auto;
-    }
+        .logo-text span {
+            font-size: 0.72rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
 
-    .brand-title h1 {
-      font-size: 1.4rem;
-      color: var(--pci-red);
-      font-weight: 800;
-      letter-spacing: 0.5px;
-    }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
 
-    .brand-title p {
-      font-size: 0.8rem;
-      color: var(--pci-green);
-      font-weight: 600;
-    }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
 
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
+        .nav-links a:hover { color: var(--primary); }
 
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            text-decoration: none;
+        }
 
-    .nav-links a:hover {
-      color: var(--pci-red);
-    }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(16, 185, 129, 0.4);
+        }
 
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--white);
-      padding: 0 20px;
-    }
+        .hero {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            color: white;
+            padding: 80px 5% 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .hero-content h2 {
-      font-size: 2.8rem;
-      margin-bottom: 15px;
-      font-weight: 800;
-    }
+        .hero h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
 
-    .hero-content p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto 25px;
-    }
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: 0 auto 30px;
+            color: #d1fae5;
+            font-weight: 300;
+        }
 
-    .badge {
-      display: inline-block;
-      background-color: var(--pci-gold);
-      color: var(--white);
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-    }
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 30px;
-      background-color: var(--pci-red);
-      color: var(--white);
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: 700;
-      transition: 0.3s;
-      margin: 5px;
-    }
+        .badge {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-    .btn:hover {
-      background-color: #b71c1c;
-      transform: translateY(-2px);
-    }
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-    .btn-alt {
-      background-color: var(--pci-green);
-    }
+        .section-header h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
 
-    .btn-alt:hover {
-      background-color: #1b5e20;
-    }
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
 
-    /* Features / Stats */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 40px 5%;
-      background-color: var(--light-gray);
-    }
+        .title-bar {
+            width: 70px;
+            height: 4px;
+            background: var(--primary);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
 
-    .feature-card {
-      background: var(--white);
-      padding: 25px;
-      text-align: center;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      border-bottom: 4px solid var(--pci-green);
-    }
+        .catalog-container {
+            max-width: 1280px;
+            margin: -40px auto 80px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
 
-    .feature-card i {
-      font-size: 2.5rem;
-      color: var(--pci-red);
-      margin-bottom: 15px;
-    }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            transition: var(--transition);
+        }
 
-    .feature-card h3 {
-      font-size: 1.1rem;
-      color: var(--dark-gray);
-    }
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 35px 28px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* About Section */
-    .about {
-      padding: 70px 5%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
+        .category-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: var(--transition);
+        }
 
-    .about-text h2 {
-      color: var(--pci-red);
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-    }
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.12);
+            border-color: rgba(16, 185, 129, 0.4);
+        }
 
-    .about-text p {
-      margin-bottom: 15px;
-      color: #555;
-    }
+        .category-card:hover::after { opacity: 1; }
 
-    .global-badges {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
 
-    .global-tag {
-      background: #e8f5e9;
-      color: var(--pci-green);
-      padding: 8px 15px;
-      border-radius: 5px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+        .cat-icon-box {
+            width: 65px;
+            height: 65px;
+            border-radius: 16px;
+            background: #ecfdf5;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
 
-    /* Products Section */
-    .products-section {
-      padding: 70px 5%;
-      background-color: var(--light-gray);
-    }
+        .category-card:hover .cat-icon-box {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.08) rotate(-3deg);
+        }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+        .cat-badge {
+            background: #f1f5f9;
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
 
-    .section-title h2 {
-      font-size: 2.4rem;
-      color: var(--pci-red);
-    }
+        .cat-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
 
-    .section-title p {
-      color: var(--pci-green);
-      font-weight: 600;
-    }
+        .cat-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
 
-    .category-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
+        .cat-action {
+            font-weight: 600;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
 
-    .tab-btn {
-      padding: 10px 25px;
-      border: none;
-      background: var(--white);
-      color: var(--dark-gray);
-      font-weight: 700;
-      cursor: pointer;
-      border-radius: 25px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
+        .category-card:hover .cat-action {
+            gap: 14px;
+            color: var(--primary);
+        }
 
-    .tab-btn.active, .tab-btn:hover {
-      background: var(--pci-red);
-      color: var(--white);
-    }
+        .products-view {
+            display: none;
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            animation: slideInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-    }
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
 
-    .product-card {
-      background: var(--white);
-      padding: 20px;
-      border-radius: 8px;
-      border-left: 4px solid var(--pci-gold);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #f1f5f9;
+            margin-bottom: 30px;
+        }
 
-    .product-card h4 {
-      color: var(--dark-gray);
-      font-size: 1.05rem;
-      margin-bottom: 8px;
-    }
+        .back-btn {
+            background: #f1f5f9;
+            color: var(--text-main);
+            border: none;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
 
-    .product-type {
-      display: inline-block;
-      font-size: 0.75rem;
-      background: #fff3e0;
-      color: var(--pci-gold);
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-weight: 700;
-    }
+        .back-btn:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateX(-4px);
+        }
 
-    /* Global Footprint */
-    .export-section {
-      padding: 60px 5%;
-      background: var(--pci-green);
-      color: var(--white);
-      text-align: center;
-    }
+        .active-cat-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-    .export-section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-    }
+        .active-cat-count {
+            background: #ecfdf5;
+            color: var(--primary-dark);
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
 
-    .country-list {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 25px;
-    }
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+        }
 
-    .country-card {
-      background: rgba(255,255,255,0.15);
-      padding: 15px 30px;
-      border-radius: 8px;
-      backdrop-filter: blur(5px);
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            border-radius: 50px;
+            border: 2px solid var(--border);
+            outline: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
 
-    /* Contact Section */
-    .contact {
-      padding: 70px 5%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+        }
 
-    .contact-info h3 {
-      color: var(--pci-red);
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-    }
+        .search-box i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
 
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
 
-    .info-item i {
-      font-size: 1.5rem;
-      color: var(--pci-green);
-    }
+        .product-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 22px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    /* Footer */
-    footer {
-      background: var(--dark-gray);
-      color: var(--white);
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
+        .product-card:hover {
+            background: #ffffff;
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -5px rgba(0,0,0,0.06);
+        }
 
-    @media (max-width: 768px) {
-      .about, .contact {
-        grid-template-columns: 1fr;
-      }
-      .hero-content h2 {
-        font-size: 2rem;
-      }
-      .nav-links {
-        display: none;
-      }
-      .top-bar {
-        flex-direction: column;
-        gap: 5px;
-        text-align: center;
-      }
-    }
-  </style>
+        .prod-num {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            background: #d1fae5;
+            padding: 3px 8px;
+            border-radius: 6px;
+            width: fit-content;
+            margin-bottom: 12px;
+        }
+
+        .prod-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .prod-inquire-btn {
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .prod-inquire-btn:hover {
+            background: #128c7e;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+
+        .about-section {
+            background: white;
+            padding: 80px 5%;
+            margin-bottom: 60px;
+        }
+
+        .about-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .about-box {
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 16px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .about-box h4 {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .about-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: var(--dark);
+            color: #94a3b8;
+            padding: 60px 5% 30px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer-col p, .footer-col li {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .footer-col a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover { color: var(--primary); }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #1e293b;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .top-bar { justify-content: center; text-align: center; }
+            .nav-links { display: none; }
+            .products-view { padding: 20px; }
+            .products-header { flex-direction: column; align-items: flex-start; }
+            .search-box { max-width: 100%; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div>
-      <i class="fa-solid fa-location-dot"></i> Hapur, Uttar Pradesh, India | 
-      <i class="fa-solid fa-award"></i> ISO Certified Firm
+    <div class="top-bar">
+        <div class="top-info">
+            <span><i class="fa-solid fa-location-dot"></i> Hapur, Uttar Pradesh, India</span>
+            <span><i class="fa-solid fa-envelope"></i> pesticideschemicalindia@gmail.com</span>
+        </div>
+        <div>
+            <span><i class="fa-solid fa-globe"></i> Exporters to Nepal, Cambodia & Pan-India</span>
+        </div>
     </div>
-    <div>
-      <a href="tel:9897547705"><i class="fa-solid fa-phone"></i> +91 9897547705</a>
-      <a href="mailto:pesticideschemicalindia@gmail.com"><i class="fa-solid fa-envelope"></i> Email Us</a>
-    </div>
-  </div>
 
-  <!-- Header / Navigation -->
-  <header>
     <nav>
-      <div class="logo-container">
-        <!-- Logo Image File -->
-        <img src="logo.png" alt="PCI Logo" onerror="this.src='WhatsApp Image 2026-07-21 at 5.02.16 PM.jpeg'">
-        <div class="brand-title">
-          <h1>PESTICIDES CHEMICAL INDIA</h1>
-          <p>Manufacturer & Formulator</p>
-        </div>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#products">Our Products</a></li>
-        <li><a href="#exports">Export Reach</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <a href="#" class="logo-container">
+            <img src="logo.png" alt="PCI Logo" class="logo-img" onerror="this.style.display='none'">
+            <div class="logo-text">
+                <h1>PESTICIDES CHEMICAL INDIA</h1>
+                <span>Quality Agro-Chemical Solutions</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#catalog">Products (130)</a></li>
+            <li><a href="#about">About PCI</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="https://wa.me/919837000000?text=Hello%20Pesticides%20Chemical%20India%20Team,%20I%20have%20an%20inquiry." class="cta-btn" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+        </a>
     </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <span class="badge">ISO Certified Quality</span>
-      <h2>Empowering Agriculture with Superior Chemical Solutions</h2>
-      <p>Leading Manufacturer & Formulator of High-Grade Insecticides, Fungicides, and Agro-Chemicals spread across India and Internationally.</p>
-      <a href="#products" class="btn">Explore Products</a>
-      <a href="https://wa.me/919897547705" class="btn btn-alt"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
-    </div>
-  </section>
-
-  <!-- Features Banner -->
-  <section class="features">
-    <div class="feature-card">
-      <i class="fa-solid fa-flask-vial"></i>
-      <h3>Precision Formulations</h3>
-      <p>Advanced lab testing for ultimate efficacy.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fa-solid fa-certificate"></i>
-      <h3>ISO Certified</h3>
-      <p>Committed to standard safety and chemical excellence.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fa-solid fa-earth-asia"></i>
-      <h3>Global Footprint</h3>
-      <p>Exporting to Nepal, Cambodia, and major Indian states.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fa-solid fa-truck-fast"></i>
-      <h3>Bulk Supply</h3>
-      <p>Large manufacturing capacity for seamless distribution.</p>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="about" id="about">
-    <div class="about-text">
-      <h2>About Pesticides Chemical India (PCI)</h2>
-      <p><strong>Pesticides Chemical India (PCI)</strong> is a premier chemical manufacturing and formulating enterprise headquartered in <strong>Hapur, Uttar Pradesh</strong>. We specialize in producing top-tier crop protection solutions designed to maximize yield and protect agricultural produce from pest infestations and diseases.</p>
-      <p>Driven by scientific precision and stringent quality control, our extensive product portfolio includes high-potency Insecticides, Fungicides, and customized agrochemical formulations trusted by farmers, distributors, and agricultural enterprises.</p>
-      
-      <div class="global-badges">
-        <div class="global-tag"><i class="fa-solid fa-check-circle"></i> Domestic Leader</div>
-        <div class="global-tag"><i class="fa-solid fa-plane"></i> Global Exporter</div>
-      </div>
-    </div>
-    <div>
-      <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=800&q=80" alt="Chemical Manufacturing Plant" style="width:100%; border-radius:10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
-    </div>
-  </section>
-
-  <!-- Export Section -->
-  <section class="export-section" id="exports">
-    <h2>Our Global & National Footprint</h2>
-    <p>PCI products are proudly formulated in India and trusted across boundaries.</p>
-    <div class="country-list">
-      <div class="country-card"><i class="fa-solid fa-map-pin"></i> Various States & Cities across India</div>
-      <div class="country-card"><i class="fa-solid fa-globe"></i> Nepal</div>
-      <div class="country-card"><i class="fa-solid fa-globe"></i> Cambodia</div>
-    </div>
-  </section>
-
-  <!-- Products Section -->
-  <section class="products-section" id="products">
-    <div class="section-title">
-      <h2>Featured Products Catalog</h2>
-      <p>Comprehensive Insecticides & Fungicides Portfolio</p>
-    </div>
-
-    <div class="product-grid">
-      <!-- Insecticides -->
-      <div class="product-card">
-        <span class="product-type">INSECTICIDE</span>
-        <h4>Acephate 75% SP</h4>
-        <p>Soluble powder for systemic insect control.</p>
-      </div>
-      <div class="product-card">
-        <span class="product-type">INSECTICIDE</span>
-        <h4>Acetamiprid 20% SP</h4>
-        <p>Effective against sucking insects on diverse crops.</p>
-      </div>
-      <div class="product-card">
-        <span class="product-type">INSECTICIDE</span>
-        <h4>Alpha Cypermethrin 10% EC / SC</h4>
-        <p>Broad-spectrum synthetic pyrethroid control.</p>
-      </div>
-      <div class="product-card">
-        <span class="product-type">INSECTICIDE</span>
-        <h4>Bifenthrin 10% EC / WP</h4>
-        <p>High-efficiency termiticide & insecticide.</p>
-      </div>
-      <div class="product-card">
-        <span class="product-type">INSECTICIDE</span>
-        <h4>Chlorpyriphos 20% EC / 50% EC</h4>
-        <p>Proven soil and foliar pest controller.</p>
-      </div>
-      <div class="product-card">
-        <span class="product-type">INSECTICIDE</span>
-        <h4>Fipronil 5% SC / 0.3% GR</h4>
-        <p>Targeted pest management for crops & soil.</p>
-      </div>
-      <div class="product-card">
-        <span class="product-type">INSECTICIDE</span>
-        <h4>Imidacloprid 17.8% SL / 70% WG</h4>
-        <p>Systemic insecticide for high protection.</p>
-      </div>
-      <div class="product-card">
-        <span class="product-type">INSECTICIDE</span>
-        <h4>Lambda Cyhalothrin 5% EC / 4.9% CS</h4>
-        <p>Quick knockdown action against caterpillars & pests.</p>
-      </div>
-      <div class="product-card">
-        <span class="product-type">INSECTICIDE</span>
-        <h4>Thiamethoxam 25% WG / 30% FS</h4>
-        <p>Advanced systemic seed treatment and spray.</p>
-      </div>
-
-      <!-- Fungicides -->
-      <div class="product-card" style="border-left-color: var(--pci-green);">
-        <span class="product-type" style="background:#e8f5e9; color:var(--pci-green);">FUNGICIDE</span>
-        <h4>Azoxystrobin 11% + Tebuconazole 18.3% SC</h4>
-        <p>Dual action broad-spectrum preventative fungicide.</p>
-      </div>
-      <div class="product-card" style="border-left-color: var(--pci-green);">
-        <span class="product-type" style="background:#e8f5e9; color:var(--pci-green);">FUNGICIDE</span>
-        <h4>Carbendazim 12% + Mancozeb 63% WP</h4>
-        <p>Trusted combination for systemic disease control.</p>
-      </div>
-      <div class="product-card" style="border-left-color: var(--pci-green);">
-        <span class="product-type" style="background:#e8f5e9; color:var(--pci-green);">FUNGICIDE</span>
-        <h4>Mancozeb 75% WP</h4>
-        <p>Contact fungicide for wide agricultural use.</p>
-      </div>
-      <div class="product-card" style="border-left-color: var(--pci-green);">
-        <span class="product-type" style="background:#e8f5e9; color:var(--pci-green);">FUNGICIDE</span>
-        <h4>Propiconazole 25% EC</h4>
-        <p>Systemic action against rust and leaf spots.</p>
-      </div>
-      <div class="product-card" style="border-left-color: var(--pci-green);">
-        <span class="product-type" style="background:#e8f5e9; color:var(--pci-green);">FUNGICIDE</span>
-        <h4>Sulphur 80% WDG / 55.16% SC</h4>
-        <p>Micronized contact fungicide and acaricide.</p>
-      </div>
-      <div class="product-card" style="border-left-color: var(--pci-green);">
-        <span class="product-type" style="background:#e8f5e9; color:var(--pci-green);">FUNGICIDE</span>
-        <h4>Tebuconazole 25.9% EC</h4>
-        <p>High performance triazole fungicide.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <div class="contact-info">
-      <h3>Get In Touch With Us</h3>
-      <p style="margin-bottom:20px;">Contact our manufacturing and sales unit in Hapur for bulk orders, dealership inquiries, and export details.</p>
-
-      <div class="info-item">
-        <i class="fa-solid fa-location-dot"></i>
-        <div>
-          <strong>Manufacturing Unit & Headquarters:</strong>
-          <p>Hapur, Uttar Pradesh, India</p>
+    <section class="hero" id="hero">
+        <h2>Pesticides Chemical India</h2>
+        <p>Manufacturer, Formulator & Exporter of High-Grade Insecticides, Fungicides, Herbicides, PGRs & Rodenticides.</p>
+        <div class="hero-badges">
+            <div class="badge"><i class="fa-solid fa-circle-check" style="color:#10b981;"></i> 130 Formulated Products</div>
+            <div class="badge"><i class="fa-solid fa-industry" style="color:#f59e0b;"></i> Semi-Automatic Plant</div>
+            <div class="badge"><i class="fa-solid fa-truck-fast" style="color:#3b82f6;"></i> Global & Domestic Supply</div>
         </div>
-      </div>
+    </section>
 
-      <div class="info-item">
-        <i class="fa-solid fa-phone"></i>
-        <div>
-          <strong>Phone / Mobile:</strong>
-          <p><a href="tel:9897547705" style="color:#333; text-decoration:none;">+91 9897547705</a></p>
+    <section class="catalog-container" id="catalog">
+        
+        <div class="section-header" id="section-header-box">
+            <h3>Explore Our Product Categories</h3>
+            <p>Click on any category below to reveal the full product listings</p>
+            <div class="title-bar"></div>
         </div>
-      </div>
 
-      <div class="info-item">
-        <i class="fa-solid fa-envelope"></i>
-        <div>
-          <strong>Official Email:</strong>
-          <p><a href="mailto:pesticideschemicalindia@gmail.com" style="color:#333; text-decoration:none;">pesticideschemicalindia@gmail.com</a></p>
+        <div class="categories-grid" id="categories-grid">
+            
+            <div class="category-card" onclick="showCategory('INSECTICIDES', '🐛 Insecticides')">
+                <div>
+                    <div class="card-top">
+                        <div class="cat-icon-box"><i class="fa-solid fa-bug"></i></div>
+                        <span class="cat-badge">75 Products</span>
+                    </div>
+                    <div class="cat-title">Insecticides</div>
+                    <div class="cat-desc">Comprehensive solutions for pest control including EC, SC, SP, WG, and GR formulations.</div>
+                </div>
+                <div class="cat-action">Explore 75 Insecticides <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <div class="category-card" onclick="showCategory('FUNGICIDES', '🍄 Fungicides')">
+                <div>
+                    <div class="card-top">
+                        <div class="cat-icon-box"><i class="fa-solid fa-plant-wilt"></i></div>
+                        <span class="cat-badge">23 Products</span>
+                    </div>
+                    <div class="cat-title">Fungicides</div>
+                    <div class="cat-desc">Advanced crop protection formulas against fungal diseases, rusts, and leaf blights.</div>
+                </div>
+                <div class="cat-action">Explore 23 Fungicides <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <div class="category-card" onclick="showCategory('HERBICIDES', '🌾 Herbicides & Weedicides')">
+                <div>
+                    <div class="card-top">
+                        <div class="cat-icon-box"><i class="fa-solid fa-scissors"></i></div>
+                        <span class="cat-badge">21 Products</span>
+                    </div>
+                    <div class="cat-title">Herbicides & Weedicides</div>
+                    <div class="cat-desc">Selective and non-selective weed control solutions for all major agricultural crops.</div>
+                </div>
+                <div class="cat-action">Explore 21 Herbicides <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <div class="category-card" onclick="showCategory('PGR', '🌱 Plant Growth Regulators (PGR)')">
+                <div>
+                    <div class="card-top">
+                        <div class="cat-icon-box"><i class="fa-solid fa-seedling"></i></div>
+                        <span class="cat-badge">6 Products</span>
+                    </div>
+                    <div class="cat-title">Plant Growth Regulators</div>
+                    <div class="cat-desc">Growth stimulants, flower boosters, and yield enhancers engineered for maximum output.</div>
+                </div>
+                <div class="cat-action">Explore 6 PGRs <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <div class="category-card" onclick="showCategory('RODENTICIDES', '🐀 Rodenticides')">
+                <div>
+                    <div class="card-top">
+                        <div class="cat-icon-box"><i class="fa-solid fa-shield-virus"></i></div>
+                        <span class="cat-badge">4 Products</span>
+                    </div>
+                    <div class="cat-title">Rodenticides</div>
+                    <div class="cat-desc">Fast-acting rodent control baits and powders for fields, grain stores, and warehouses.</div>
+                </div>
+                <div class="cat-action">Explore 4 Rodenticides <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <div class="category-card" onclick="showCategory('ANTIBIOTIC', '🧪 Agricultural Antibiotics')">
+                <div>
+                    <div class="card-top">
+                        <div class="cat-icon-box"><i class="fa-solid fa-vial-virus"></i></div>
+                        <span class="cat-badge">1 Product</span>
+                    </div>
+                    <div class="cat-title">Antibiotics</div>
+                    <div class="cat-desc">Specialized anti-bacterial formulation for crop protection and disease management.</div>
+                </div>
+                <div class="cat-action">Explore Antibiotics <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
         </div>
-      </div>
 
-      <div class="info-item">
-        <i class="fa-solid fa-certificate"></i>
-        <div>
-          <strong>Certification:</strong>
-          <p>ISO Certified Quality Standards</p>
+        <div class="products-view" id="products-view">
+            <div class="products-header">
+                <div>
+                    <button class="back-btn" onclick="showCategories()"><i class="fa-solid fa-arrow-left"></i> Back to Categories</button>
+                    <div style="margin-top: 15px;">
+                        <span class="active-cat-title" id="active-cat-title">
+                            Insecticides <span class="active-cat-count" id="active-cat-count">75 Items</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="product-search" placeholder="Search product name..." onkeyup="filterProducts()">
+                </div>
+            </div>
+
+            <div class="products-grid" id="products-grid"></div>
         </div>
-      </div>
-    </div>
 
-    <div>
-      <div style="background:var(--light-gray); padding:30px; border-radius:10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-        <h4 style="margin-bottom:15px; color:var(--pci-red);">Quick Inquiry</h4>
-        <form onsubmit="alert('Thank you for reaching out to PCI. We will contact you shortly!'); return false;">
-          <input type="text" placeholder="Your Name or Business Name" required style="width:100%; padding:12px; margin-bottom:12px; border:1px solid #ccc; border-radius:5px;">
-          <input type="tel" placeholder="Phone Number" required style="width:100%; padding:12px; margin-bottom:12px; border:1px solid #ccc; border-radius:5px;">
-          <textarea placeholder="Requirement / Products List" rows="4" required style="width:100%; padding:12px; margin-bottom:12px; border:1px solid #ccc; border-radius:5px;"></textarea>
-          <button type="submit" class="btn" style="width:100%; cursor:pointer;">Send Inquiry</button>
-        </form>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Pesticides Chemical India (PCI). All Rights Reserved. | Operating out of Hapur, UP, India</p>
-  </footer>
+    <section class="about-section" id="about">
+        <div class="section-header">
+            <h3>Why Choose Pesticides Chemical India?</h3>
+            <p>Trusted formulation expertise committed to agricultural prosperity</p>
+            <div class="title-bar"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-box">
+                <h4><i class="fa-solid fa-boxes-stacked" style="color:var(--primary);"></i> Complete Range</h4>
+                <p>130 technical and CIB-registered chemical formulations tailored for diverse crops and climates.</p>
+            </div>
+            <div class="about-box">
+                <h4><i class="fa-solid fa-earth-asia" style="color:var(--primary);"></i> Export Presence</h4>
+                <p>Actively exporting agricultural chemicals to Nepal, Cambodia, and pan-India distribution hubs.</p>
+            </div>
+            <div class="about-box">
+                <h4><i class="fa-solid fa-flask" style="color:var(--primary);"></i> Quality Assurance</h4>
+                <p>Strict quality control tests in certified laboratories to ensure maximum field efficacy for farmers.</p>
+            </div>
+        </div>
+    </section>
 
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>PESTICIDES CHEMICAL INDIA</h4>
+                <p>Leading agro-chemical manufacturer dedicated to providing premium crop protection solutions.</p>
+                <p><i class="fa-solid fa-location-dot"></i> Hapur, Uttar Pradesh, India</p>
+            </div>
+            <div class="footer-col">
+                <h4>Product Categories</h4>
+                <ul>
+                    <li><a href="#catalog" onclick="showCategory('INSECTICIDES', '🐛 Insecticides')">Insecticides (75)</a></li>
+                    <li><a href="#catalog" onclick="showCategory('FUNGICIDES', '🍄 Fungicides')">Fungicides (23)</a></li>
+                    <li><a href="#catalog" onclick="showCategory('HERBICIDES', '🌾 Herbicides & Weedicides')">Herbicides & Weedicides (21)</a></li>
+                    <li><a href="#catalog" onclick="showCategory('PGR', '🌱 Plant Growth Regulators (PGR)')">Plant Growth Regulators (6)</a></li>
+                    <li><a href="#catalog" onclick="showCategory('RODENTICIDES', '🐀 Rodenticides')">Rodenticides (4)</a></li>
+                    <li><a href="#catalog" onclick="showCategory('ANTIBIOTIC', '🧪 Agricultural Antibiotics')">Antibiotic (1)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Inquiries</h4>
+                <p>Email: pesticideschemicalindia@gmail.com</p>
+                <p>Location: Hapur, UP, India</p>
+                <p style="margin-top:15px;">
+                    <a href="https://wa.me/919837000000?text=Hello%20PCI%20Team" class="cta-btn" target="_blank" style="padding: 8px 16px; font-size: 0.85rem;">
+                        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Pesticides Chemical India. All rights reserved. Designed for optimal field performance.
+        </div>
+    </footer>
+
+    <script>
+        const PRODUCTS_DATA = {
+  "INSECTICIDES": [
+    "Acephate 75% SP", "Acetamiprid 20% SP", "Alpha Cypermethrin 10% EC", "Alpha Cypermethrin 10% SC",
+    "Alpha Cypermethrin 5% WP", "Aluminium Phosphide 56% (f) Tablet", "Beta Cyfluthrin 2.45% S.C",
+    "Bifenthrin 10% EC", "Bifenthrin 10% WP", "Bifenthrin 2.5% EC",
+    "Buprofezin 15% + Acephate 35% WP for indigenous manufacture", "Buprofezin 25% SC",
+    "Cartap Hydrochloride 4% GR", "Cartap Hydrochloride 50% SP", "Chlorantraniliprole 0.4%  w/w GR",
+    "Chlorantraniliprole 18.5% w/w SC", "Chlorpyrifos 16% + Alphacypermethrin 1% E.C", "Chlorpyriphos 10% GR",
+    "Chlorpyriphos 2% RTU", "CHLORPYRIPHOS 20% CS", "Chlorpyriphos 20% EC",
+    "Chlorpyriphos 50% + Cypermethrin 5% EC", "Chlorpyriphos 50% EC", "Cypermethrin 0.25% DP",
+    "Cypermethrin 1.0% chalk", "Cypermethrin 10% EC", "Cypermethrin 25% EC", "Cypermethrin 0.25% DP",
+    "Deltamethrin 1.25% ULV", "Deltamethrin 11%  w/w EC", "Deltamethrin 2.5% FLOW", "Deltamethrin 2.5% WP",
+    "Diafenthiuron 50% WP", "Dimethoate 30% EC", "Emamectin Benzoate 1.5% + Fipronil 3.5% SC for indigenous manufacture",
+    "Emamectin Benzoate 1.9% EC", "EMAMECTIN BENZOATE 3.0% + THIAMETHOXAM 12.0% WG", "Emamectin Benzoate 5% SG",
+    "Ethion 40% + Cypermethrin 5% EC", "Ethion 50% EC", "Fenvalerate 20% EC", "Fipronil 0.05% GEL",
+    "Fipronil 0.3% G.R.", "Fipronil 2.92% EC", "Fipronil 4% w/w + Thiamethoxam 4% w/w SC forindigenous manufacture",
+    "Fipronil 40% + Imidacloprid 40% WG", "Fipronil 5% SC", "Fironil 80% WDG", "Imidacloprid 17.8% SL",
+    "Imidacloprid 30.5% SC", "Imidacloprid 48% FS", "Imidacloprid 70% WG", "Indoxacarb 14.5% SC",
+    "Lambda Cyhalothrin 10% WP", "Lambda Cyhalothrin 2.5% EC", "Lambda Cyhalothrin 4.9% CS",
+    "Lambda Cyhalothrin 5% EC", "Malathion 50% EC", "Malathion-5% D.P.", "Monocrotophos 36% SL",
+    "Novaluron 5.25% + Indoxacarb 4.5% SC", "Phenthoate 50% EC", "Profenofos 40% + Cypermethrin 4% EC",
+    "Profenofos 50% EC", "Propoxur 1% spray", "Propoxur 20% E.C.", "Pymetrozine 50% WG",
+    "Pyriproxyfen 10% + Bifenthrin 10% EC for indigenous manufacture", "Quinalphos 25% EC", "Temephos 50% EC",
+    "Thiamethoxam 12.6% + Lambda Cyhalothrin 9.5% ZC for indigenous manufacture", "Thiamethoxam 25% WG",
+    "Thiamethoxam 30% FS", "Thiamethoxam 75%  w/w SG", "Transfluthrin 1.6%w/w LV"
+  ],
+  "FUNGICIDES": [
+    "Azoxystrobin 11% + Tebuconazole 18.3% SC", "AZOXYSTROBIN 11.5% + MANCOZEB 30% w/w WP",
+    "Captan 50% WP", "Captan 70% + Hexaconazole 5% WP", "Carbendazim 12% + Mancozeb 63% WP",
+    "Carbendazim 50% WP", "Chlorothalonil 75% WP", "Cymoxanil 8% + Mancozeb 64% WP",
+    "Difenoconazole 25% EC", "Hexaconazole 5% EC", "Hexaconazole 5% SC", "Metalaxyl 35% WS",
+    "Metalaxyl 8% + Mancozeb 64% WP", "Mancozeb 75% WP", "Propiconazole 13.9% + Difenoconazole 13.9% EC",
+    "Propiconazole 25% EC", "Propineb 70% WP", "Sulphur 55.16% SC", "Sulphur 80% WDG",
+    "Tebuconazole 10% + Sulphur 65% WG", "Tebuconazole 25.9% EC", "Thiophanate Methyl 70% WP", "Tricyclazole 75% WP"
+  ],
+  "HERBICIDES": [
+    "2,4-D Anime Salt -58% SL", "Atrazine 50% WP", "Bispyribac Sodium 10%  w/w SC", "Butachlor 50% EC",
+    "Chlorimuron Ethyl 25% WP", "Clodinafop Propargyl 15% WP", "Fenoxaprop P Ethyl 9.3% EC",
+    "Glyphosate 41% SL", "Imazethapyr 10% SL", "Imazethapyr 70% WG",
+    "IPA Salt of Glyphosate 54% SL for indigenous manufacture", "Metribuzin 70% WP",
+    "Metsulfuron Methyl 10% + Chlorimuron Ethyl 10% WP", "Metsulfuron Methyl 20% WP",
+    "Oxyfluorfen 23.5% EC (w/w)", "Paraquat Dichloride 24% SL", "Pendimethalin 30% EC",
+    "Pendimethalin 38.7% CS", "Pretilachlor 37% w/w EW", "Pretilachlor 50% EC", "Quizalofop Ethyl 10% EC"
+  ],
+  "RODENTICIDES": [
+    "Bromadiolone 0.005% R.B.", "Zinc Phosphide 1% Bait", "Zinc Phosphide 2% RB", "Zinc Phosphide 80% W/W"
+  ],
+  "ANTIBIOTIC": [
+    "Validamycin 3% L"
+  ],
+  "PGR": [
+    "Chlormequat Chloride 50% SOL", "Ethephon 39% SL", "Forchlorfenuron (CPPU) 0.1% Liquid",
+    "Gibberellic Acid 0.001% L", "Paclobutrazole 23% SC", "Triacontanol EW 0.1% MIN."
+  ]
+};
+
+        let currentActiveCategoryKey = '';
+
+        function showCategory(catKey, catDisplayName) {
+            currentActiveCategoryKey = catKey;
+            const items = PRODUCTS_DATA[catKey] || [];
+            
+            document.getElementById('active-cat-title').innerHTML = `${catDisplayName} <span class="active-cat-count">${items.length} Items</span>`;
+            document.getElementById('product-search').value = '';
+
+            renderProducts(items);
+
+            document.getElementById('categories-grid').style.display = 'none';
+            document.getElementById('section-header-box').style.display = 'none';
+
+            const prodView = document.getElementById('products-view');
+            prodView.style.display = 'block';
+
+            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showCategories() {
+            document.getElementById('products-view').style.display = 'none';
+            document.getElementById('categories-grid').style.display = 'grid';
+            document.getElementById('section-header-box').style.display = 'block';
+            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function renderProducts(items) {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+
+            if(items.length === 0) {
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">No products found matching your search.</div>';
+                return;
+            }
+
+            items.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                
+                const waMsg = encodeURIComponent(`Hello Pesticides Chemical India team, I want to inquire about: ${item}`);
+                const waLink = `https://wa.me/919837000000?text=${waMsg}`;
+
+                card.innerHTML = `
+                    <div>
+                        <div class="prod-num">Item #${index + 1}</div>
+                        <div class="prod-name">${item}</div>
+                    </div>
+                    <a href="${waLink}" target="_blank" class="prod-inquire-btn">
+                        <i class="fa-brands fa-whatsapp"></i> Inquire Price
+                    </a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterProducts() {
+            const query = document.getElementById('product-search').value.toLowerCase().trim();
+            const items = PRODUCTS_DATA[currentActiveCategoryKey] || [];
+            const filtered = items.filter(item => item.toLowerCase().includes(query));
+            renderProducts(filtered);
+        }
+    </script>
 </body>
 </html>
