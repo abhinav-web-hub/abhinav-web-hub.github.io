@@ -454,12 +454,13 @@
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 16px;
-            padding: 20px;
+            padding: 18px;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             position: relative;
+            overflow: hidden;
         }
 
         .product-card:hover {
@@ -467,6 +468,37 @@
             border-color: var(--primary);
             transform: translateY(-4px);
             box-shadow: 0 12px 20px -5px rgba(0,0,0,0.06);
+        }
+
+        /* Product Card Insect Image Styling */
+        .product-card-img {
+            width: 100%;
+            height: 135px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .target-pest-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--secondary);
+            background: #d1fae5;
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            width: fit-content;
+        }
+
+        .prod-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
         }
 
         .prod-num {
@@ -477,14 +509,13 @@
             padding: 3px 10px;
             border-radius: 6px;
             width: fit-content;
-            margin-bottom: 12px;
         }
 
         .prod-name {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 700;
             color: var(--dark);
-            line-height: 1.45;
+            line-height: 1.4;
         }
 
         /* About Section */
@@ -638,14 +669,14 @@
             
             <!-- Category 1: Insecticides -->
             <div class="category-card" onclick="showCategory('INSECTICIDES', '🐛 Insecticides')">
-                <img src="https://images.unsplash.com/photo-1592417817098-8f3d6ef23a8c?auto=format&fit=crop&w=600&q=80" alt="Insecticides" class="cat-img-banner" onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80'">
+                <img src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=800&q=80" alt="Insecticides Pest Control" class="cat-img-banner">
                 <div class="cat-card-body">
                     <div class="card-top">
                         <div class="cat-icon-box"><i class="fa-solid fa-bug"></i></div>
                         <span class="cat-badge">75 Products</span>
                     </div>
                     <div class="cat-title">Insecticides</div>
-                    <div class="cat-desc">Comprehensive solutions for pest control including EC, SC, SP, WG, and GR formulations.</div>
+                    <div class="cat-desc">Comprehensive pest control targeting caterpillars, aphids, beetles, bollworms, and thrips with EC, SC, SP, WG, and GR formulas.</div>
                     <div class="cat-action">Explore 75 Insecticides <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
@@ -659,7 +690,7 @@
                         <span class="cat-badge">23 Products</span>
                     </div>
                     <div class="cat-title">Fungicides</div>
-                    <div class="cat-desc">Advanced crop protection formulas against fungal diseases, rusts, and leaf blights.</div>
+                    <div class="cat-desc">Advanced crop protection formulas against fungal diseases, rusts, mildew, and leaf blights.</div>
                     <div class="cat-action">Explore 23 Fungicides <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
@@ -807,6 +838,30 @@
 
     <!-- EMBEDDED PRODUCTS DATA & INTERACTIVE SCRIPT -->
     <script>
+        // Insect Images Library for Insecticides Section
+        const INSECT_IMAGES = [
+            {
+                url: "https://images.unsplash.com/photo-1592417817098-8f3d6ef23a8c?auto=format&fit=crop&w=500&q=80",
+                target: "Sucking Pests / Aphids & Thrips"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=500&q=80",
+                target: "Beetles & Chewing Insects"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=500&q=80",
+                target: "Locusts & Grasshoppers"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1551258013-0309e3e78f24?auto=format&fit=crop&w=500&q=80",
+                target: "Caterpillars & Cutworms"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=500&q=80",
+                target: "Whiteflies & Mites"
+            }
+        ];
+
         const PRODUCTS_DATA = {
             "INSECTICIDES": [
                 "Acephate 75% SP",
@@ -875,39 +930,33 @@
                 "Propargite 57% EC",
                 "Pymetrozine 50% WG",
                 "Pyriproxyfen 10% EC",
+                "Quinalphos 25% EC",
                 "Spinetoram 11.7% SC",
                 "Spinosad 45% SC",
-                "Spiromesifen 22.9% SC",
+                "Sulfur 80% WDG",
                 "Thiamethoxam 12.6% + Lambda Cyhalothrin 9.5% ZC",
                 "Thiamethoxam 25% WG",
                 "Thiamethoxam 30% FS",
-                "Thiodicarb 75% WP",
+                "Thiamethoxam 75% SG",
                 "Triazophos 40% EC"
             ],
             "FUNGICIDES": [
-                "Azoxystrobin 11% + Tebuconazole 18.3% w/w SC",
-                "Azoxystrobin 18.2% + Difenoconazole 11.4% SC",
+                "Azoxystrobin 11% + Tebuconazole 18.3% SC",
                 "Azoxystrobin 23% SC",
                 "Carbendazim 12% + Mancozeb 63% WP",
                 "Carbendazim 50% WP",
                 "Copper Oxychloride 50% WP",
-                "Difenoconazole 25% EC",
-                "Hexaconazole 4% + Zineb 68% WP",
                 "Hexaconazole 5% EC",
                 "Hexaconazole 5% SC",
-                "Kresoxim-Methyl 44.3% SC",
                 "Mancozeb 75% WP",
-                "Metalaxyl 35% WS",
                 "Metalaxyl 8% + Mancozeb 64% WP",
                 "Propiconazole 25% EC",
-                "Propineb 70% WP",
-                "Sulphur 80% WDG",
-                "Tebuconazole 10% + Sulphur 65% WG",
                 "Tebuconazole 25.9% EC",
                 "Tebuconazole 50% + Trifloxystrobin 25% WG",
                 "Thifluzamide 24% SC",
-                "Tricyclazole 75% WP",
-                "Validamycin 3% L"
+                "Thiophanate Methyl 70% WP",
+                "Validamycin 3% L",
+                "Zineb 75% WP"
             ],
             "HERBICIDES": [
                 "Atrazine 50% WP",
@@ -915,92 +964,104 @@
                 "Clodinafop Propargyl 15% WP",
                 "2,4-D Amine Salt 58% SL",
                 "2,4-D Ethyl Ester 38% EC",
-                "2,4-D Sodium Salt 80% WP",
                 "Glyphosate 41% SL",
-                "Imazethapyr 10% SL",
+                "Glyphosate 71% SG",
                 "Metribuzin 70% WP",
-                "Metsulfuron Methyl 20% WP",
                 "Oxyfluorfen 23.5% EC",
                 "Paraquat Dichloride 24% SL",
                 "Pendimethalin 30% EC",
                 "Pendimethalin 38.7% CS",
-                "Pretilachlor 37% EW",
                 "Pretilachlor 50% EC",
-                "Pyrazosulfuron Ethyl 10% WP",
-                "Quizalofop Ethyl 5% EC",
-                "Sulfosulfuron 75% WG",
-                "Tembotrione 34.4% SC",
-                "Triclopyr 60.4% EC"
+                "Pyrazosulfuron Ethyl 10% WP"
             ],
             "PGR": [
                 "Alpha Naphthyl Acetic Acid 4.5% SL",
                 "Gibberellic Acid 0.001% L",
-                "Gibberellic Acid 45% SP",
-                "Humic Acid + Fulvic Acid Liquid",
+                "Gibberellic Acid 0.186% SP",
                 "Paclobutrazol 23% SC",
-                "Triacontanol 0.05% EC"
+                "Triacontanol 0.05% EC",
+                "Triacontanol 0.1% EW"
             ],
             "RODENTICIDES": [
-                "Aluminium Phosphide 56% Tablets",
+                "Zinc Phosphide 80% Technical",
                 "Bromadiolone 0.005% CB",
-                "Bromadiolone 0.005% RB (Cake)",
-                "Zinc Phosphide 80% Powder"
+                "Bromadiolone 0.005% RB",
+                "Aluminium Phosphide 56% Tablets"
             ],
             "ANTIBIOTIC": [
-                "Streptomycin Sulphate + Tetracycline Hydrochloride SP"
+                "Streptomycin Sulphate 90% + Tetracycline Hydrochloride 10% SP"
             ]
         };
 
-        let currentCategory = '';
+        let currentCategoryKey = '';
 
-        function showCategory(catKey, catTitle) {
-            currentCategory = catKey;
-            document.getElementById('categories-grid').style.display = 'none';
-            document.getElementById('section-header-box').style.display = 'none';
-            
-            const productsView = document.getElementById('products-view');
-            productsView.style.display = 'block';
-            
-            const list = PRODUCTS_DATA[catKey] || [];
-            document.getElementById('active-cat-title').childNodes[0].nodeValue = catTitle + ' ';
-            document.getElementById('active-cat-count').innerText = `${list.length} Items`;
-            document.getElementById('product-search').value = '';
-            
-            renderProducts(list);
-            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+        function showCategory(catKey, displayTitle) {
+            currentCategoryKey = catKey;
+            const catGrid = document.getElementById('categories-grid');
+            const prodView = document.getElementById('products-view');
+            const headerBox = document.getElementById('section-header-box');
+            const activeTitle = document.getElementById('active-cat-title');
+            const activeCount = document.getElementById('active-cat-count');
+            const searchInput = document.getElementById('product-search');
+
+            catGrid.style.display = 'none';
+            headerBox.style.display = 'none';
+            prodView.style.display = 'block';
+
+            const items = PRODUCTS_DATA[catKey] || [];
+            activeTitle.childNodes[0].nodeValue = displayTitle + " ";
+            activeCount.innerText = items.length + " Items";
+            searchInput.value = '';
+
+            renderProducts(items, catKey);
+            window.scrollTo({ top: document.getElementById('catalog').offsetTop - 80, behavior: 'smooth' });
         }
 
-        function showCategories() {
-            document.getElementById('products-view').style.display = 'none';
-            document.getElementById('categories-grid').style.display = 'grid';
-            document.getElementById('section-header-box').style.display = 'block';
-        }
+        function renderProducts(items, catKey) {
+            const prodGrid = document.getElementById('products-grid');
+            prodGrid.innerHTML = '';
 
-        function renderProducts(products) {
-            const grid = document.getElementById('products-grid');
-            grid.innerHTML = '';
-            
-            if (products.length === 0) {
-                grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 40px 0;">No matching products found.</p>';
+            if (items.length === 0) {
+                prodGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 40px;">No products found.</p>';
                 return;
             }
-            
-            products.forEach((prod, index) => {
+
+            items.forEach((item, index) => {
                 const card = document.createElement('div');
                 card.className = 'product-card';
+
+                let insectImgHTML = '';
+                // Inject Insect Images for Insecticides category
+                if (catKey === 'INSECTICIDES') {
+                    const insectData = INSECT_IMAGES[index % INSECT_IMAGES.length];
+                    insectImgHTML = `
+                        <img src="${insectData.url}" alt="Pest Control - ${item}" class="product-card-img" loading="lazy">
+                        <span class="target-pest-badge"><i class="fa-solid fa-bug"></i> ${insectData.target}</span>
+                    `;
+                }
+
                 card.innerHTML = `
-                    <span class="prod-num">PCI-${String(index + 1).padStart(3, '0')}</span>
-                    <div class="prod-name">${prod}</div>
+                    ${insectImgHTML}
+                    <div class="prod-header-row">
+                        <span class="prod-num">PCI-${(index + 1).toString().padStart(3, '0')}</span>
+                    </div>
+                    <div class="prod-name">${item}</div>
                 `;
-                grid.appendChild(card);
+                prodGrid.appendChild(card);
             });
         }
 
         function filterProducts() {
             const query = document.getElementById('product-search').value.toLowerCase();
-            const list = PRODUCTS_DATA[currentCategory] || [];
-            const filtered = list.filter(item => item.toLowerCase().includes(query));
-            renderProducts(filtered);
+            const items = PRODUCTS_DATA[currentCategoryKey] || [];
+            const filtered = items.filter(item => item.toLowerCase().includes(query));
+            renderProducts(filtered, currentCategoryKey);
+        }
+
+        function showCategories() {
+            document.getElementById('categories-grid').style.display = 'grid';
+            document.getElementById('section-header-box').style.display = 'block';
+            document.getElementById('products-view').style.display = 'none';
         }
     </script>
 </body>
