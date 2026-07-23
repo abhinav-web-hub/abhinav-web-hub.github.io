@@ -1,297 +1,1013 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pesticides Chemical India - ISO Certified Agrochemical Manufacturer</title>
-  <style>
-    /* Global Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background-color: #f8fafc;
-      color: #1e293b;
-      line-height: 1.6;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    
-    /* Header & Navigation */
-    header {
-      background-color: #ffffff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .navbar {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-    }
-    .brand {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #15803d;
-    }
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-weight: 500;
-      color: #334155;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover {
-      color: #15803d;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesticides Chemical India | Official Agro-Chemical Manufacturer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #065f46;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(rgba(21, 128, 61, 0.9), rgba(15, 118, 110, 0.95)), 
-                  url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover;
-      color: #ffffff;
-      padding: 5rem 2rem;
-      text-align: center;
-    }
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .hero h1 {
-      font-size: 2.75rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      opacity: 0.95;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background-color: rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      padding: 0.5rem 1.25rem;
-      border-radius: 50px;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      backdrop-filter: blur(5px);
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-    /* Main Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
+        body {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-    /* Section Headers */
-    .section-title {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .section-title h2 {
-      font-size: 2.2rem;
-      color: #0f172a;
-      margin-bottom: 0.5rem;
-    }
-    .section-title p {
-      color: #64748b;
-    }
+        /* Top Bar */
+        .top-bar {
+            background: var(--secondary);
+            color: #ecfdf5;
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-    /* Product Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
+        .top-info span {
+            margin-right: 20px;
+        }
 
-    /* Cards */
-    .card {
-      background: #ffffff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
-    .card-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      background-color: #e2e8f0;
-    }
-    .card-body {
-      padding: 1.5rem;
-    }
-    .card-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #15803d;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-    .card-title {
-      font-size: 1.3rem;
-      margin-bottom: 0.75rem;
-      color: #0f172a;
-    }
-    .card-text {
-      color: #475569;
-      font-size: 0.95rem;
-    }
+        .top-info i {
+            color: var(--accent);
+            margin-right: 5px;
+        }
 
-    /* Contact Banner */
-    .contact-bar {
-      background-color: #15803d;
-      color: white;
-      text-align: center;
-      padding: 3rem 2rem;
-      border-radius: 12px;
-      margin-top: 2rem;
-    }
-    .btn {
-      display: inline-block;
-      background-color: #ffffff;
-      color: #15803d;
-      font-weight: 700;
-      padding: 0.8rem 1.8rem;
-      border-radius: 6px;
-      margin-top: 1.2rem;
-      transition: background 0.2s;
-    }
-    .btn:hover {
-      background-color: #f1f5f9;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #64748b;
-      font-size: 0.9rem;
-      border-top: 1px solid #e2e8f0;
-      background-color: #ffffff;
-    }
-  </style>
+        /* Navbar */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--secondary);
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            font-size: 0.72rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            color: white;
+            padding: 70px 5% 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: 0 auto 30px;
+            color: #d1fae5;
+            font-weight: 300;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Section Title */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .title-bar {
+            width: 70px;
+            height: 4px;
+            background: var(--primary);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Catalog Section Container (Fixed Overlap) */
+        .catalog-container {
+            max-width: 1280px;
+            margin: 50px auto 80px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Categories Cards Grid with Visual Image Banners */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            transition: var(--transition);
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.12);
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+
+        .cat-img-banner {
+            height: 160px;
+            width: 100%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .cat-card-body {
+            padding: 25px 28px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            margin-top: -45px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cat-icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: #ffffff;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .category-card:hover .cat-icon-box {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.08) rotate(-3deg);
+        }
+
+        .cat-badge {
+            background: #ecfdf5;
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .cat-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .cat-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .cat-action {
+            font-weight: 600;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .cat-action {
+            gap: 14px;
+            color: var(--primary);
+        }
+
+        /* Products Listing View */
+        .products-view {
+            display: none;
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            animation: slideInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #f1f5f9;
+            margin-bottom: 30px;
+        }
+
+        .back-btn {
+            background: #f1f5f9;
+            color: var(--text-main);
+            border: none;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .back-btn:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateX(-4px);
+        }
+
+        .active-cat-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .active-cat-count {
+            background: #ecfdf5;
+            color: var(--primary-dark);
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        /* Search Box */
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            border-radius: 50px;
+            border: 2px solid var(--border);
+            outline: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Product Cards Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 20px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+        }
+
+        .product-card:hover {
+            background: #ffffff;
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -5px rgba(0,0,0,0.06);
+        }
+
+        .prod-num {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            background: #d1fae5;
+            padding: 3px 10px;
+            border-radius: 6px;
+            width: fit-content;
+            margin-bottom: 12px;
+        }
+
+        .prod-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.45;
+        }
+
+        /* About Section */
+        .about-section {
+            background: white;
+            padding: 80px 5%;
+            margin-bottom: 60px;
+        }
+
+        .about-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .about-box {
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 16px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .about-box h4 {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .about-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #94a3b8;
+            padding: 60px 5% 30px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer-col p, .footer-col li {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .footer-col a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #1e293b;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .top-bar { justify-content: center; text-align: center; }
+            .nav-links { display: none; }
+            .products-view { padding: 20px; }
+            .products-header { flex-direction: column; align-items: flex-start; }
+            .search-box { max-width: 100%; }
+            .catalog-container { margin-top: 30px; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- HEADER / NAVIGATION -->
-  <header>
-    <nav class="navbar">
-      <div class="brand">Pesticides Chemical India</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <!-- 1. Top Bar -->
+    <div class="top-bar">
+        <div class="top-info">
+            <span><i class="fa-solid fa-location-dot"></i> Hapur, Uttar Pradesh, India</span>
+            <span><i class="fa-solid fa-envelope"></i> pesticideschemicalindia@gmail.com</span>
+        </div>
+        <div>
+            <span><i class="fa-solid fa-globe"></i> Exporters to Nepal, Cambodia & Pan-India</span>
+        </div>
+    </div>
+
+    <!-- 2. Navbar with Direct WhatsApp Link to 9897547705 -->
+    <nav>
+        <a href="#" class="logo-container">
+            <img src="logo.png" alt="PCI Logo" class="logo-img" onerror="this.style.display='none'">
+            <div class="logo-text">
+                <h1>PESTICIDES CHEMICAL INDIA</h1>
+                <span>Quality Agro-Chemical Solutions</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#catalog">Products (130)</a></li>
+            <li><a href="#about">About PCI</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!-- WHATSAPP DIRECT TO 9897547705 -->
+        <a href="https://wa.me/919897547705?text=Hello%20Pesticides%20Chemical%20India%20Team,%20I%20have%20an%20inquiry." class="cta-btn" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+        </a>
     </nav>
-  </header>
 
-  <!-- HERO SECTION -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <!-- ISO CERTIFIED BADGE (REPLACED SEMI-AUTOMATIC) -->
-      <div class="badge">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          <path d="m9 12 2 2 4-4"/>
-        </svg>
-        ISO 9001:2015 Certified Plant
-      </div>
-      <h1>Pesticides Chemical India</h1>
-      <p>Leading Agrochemical Formulation & Packaging Manufacturer delivering high-grade agricultural protection solutions.</p>
-    </div>
-  </section>
-
-  <!-- PRODUCTS CATALOG SECTION -->
-  <section id="products" class="container">
-    <div class="section-title">
-      <h2>Product Range</h2>
-      <p>High-performance formulations engineered to safeguard crops and improve yields.</p>
-    </div>
-
-    <div class="grid">
-      
-      <!-- INSECTICIDES CARD (FIXED IMAGE WITH AUTOMATIC FALLBACK) -->
-      <div class="card">
-        <img 
-          src="images/insecticides.jpg" 
-          alt="Insecticides Range" 
-          class="card-img"
-          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=800&q=80';"
-        >
-        <div class="card-body">
-          <span class="card-tag">Crop Protection</span>
-          <h3 class="card-title">Insecticides</h3>
-          <p class="card-text">Formulated to combat a wide spectrum of field pests effectively while maintaining crop safety.</p>
+    <!-- 3. Hero Section -->
+    <section class="hero" id="hero">
+        <h2>Pesticides Chemical India</h2>
+        <p>Manufacturer, Formulator & Exporter of High-Grade Insecticides, Fungicides, Herbicides, PGRs & Rodenticides.</p>
+        <div class="hero-badges">
+            <div class="badge"><i class="fa-solid fa-circle-check" style="color:#10b981;"></i> 130 Formulated Products</div>
+            <div class="badge"><i class="fa-solid fa-industry" style="color:#f59e0b;"></i> Semi-Automatic Plant</div>
+            <div class="badge"><i class="fa-solid fa-truck-fast" style="color:#3b82f6;"></i> Global & Domestic Supply</div>
         </div>
-      </div>
+    </section>
 
-      <!-- WEEDICIDES CARD (CLEAN CODE - NO EXTRA/STRAY FIELDS) -->
-      <div class="card">
-        <img 
-          src="images/weedicides.jpg" 
-          alt="Weedicides Range" 
-          class="card-img"
-          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80';"
-        >
-        <div class="card-body">
-          <span class="card-tag">Weed Management</span>
-          <h3 class="card-title">Weedicides & Herbicides</h3>
-          <p class="card-text">Targeted selective and non-selective formulations to protect crops from competitive growth.</p>
+    <!-- 4. Interactive Catalog Section (Fixed Overlap) -->
+    <section class="catalog-container" id="catalog">
+        
+        <!-- SECTION TITLE -->
+        <div class="section-header" id="section-header-box">
+            <h3>Explore Our Product Categories</h3>
+            <p>Click on any category card below to view all products in that category</p>
+            <div class="title-bar"></div>
         </div>
-      </div>
 
-      <!-- FUNGICIDES CARD -->
-      <div class="card">
-        <img 
-          src="images/fungicides.jpg" 
-          alt="Fungicides Range" 
-          class="card-img"
-          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1592419044706-39796d40f98c?auto=format&fit=crop&w=800&q=80';"
-        >
-        <div class="card-body">
-          <span class="card-tag">Disease Control</span>
-          <h3 class="card-title">Fungicides</h3>
-          <p class="card-text">Advanced fungal prevention and eradication formulas for healthy crop preservation.</p>
+        <!-- CATEGORIES CARDS GRID WITH VISUAL IMAGES -->
+        <div class="categories-grid" id="categories-grid">
+            
+            <!-- Category 1: Insecticides -->
+            <div class="category-card" onclick="showCategory('INSECTICIDES', '🐛 Insecticides')">
+                <img src="https://images.unsplash.com/photo-1592417817098-8f3d6ef23a8c?auto=format&fit=crop&w=600&q=80" alt="Insecticides" class="cat-img-banner">
+                <div class="cat-card-body">
+                    <div class="card-top">
+                        <div class="cat-icon-box"><i class="fa-solid fa-bug"></i></div>
+                        <span class="cat-badge">75 Products</span>
+                    </div>
+                    <div class="cat-title">Insecticides</div>
+                    <div class="cat-desc">Comprehensive solutions for pest control including EC, SC, SP, WG, and GR formulations.</div>
+                    <div class="cat-action">Explore 75 Insecticides <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- Category 2: Fungicides -->
+            <div class="category-card" onclick="showCategory('FUNGICIDES', '🍄 Fungicides')">
+                <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=600&q=80" alt="Fungicides" class="cat-img-banner">
+                <div class="cat-card-body">
+                    <div class="card-top">
+                        <div class="cat-icon-box"><i class="fa-solid fa-plant-wilt"></i></div>
+                        <span class="cat-badge">23 Products</span>
+                    </div>
+                    <div class="cat-title">Fungicides</div>
+                    <div class="cat-desc">Advanced crop protection formulas against fungal diseases, rusts, and leaf blights.</div>
+                    <div class="cat-action">Explore 23 Fungicides <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- Category 3: Herbicides / Weedicides -->
+            <div class="category-card" onclick="showCategory('HERBICIDES', '🌾 Herbicides & Weedicides')">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="Herbicides" class="cat-img-banner">
+                <div class="cat-card-body">
+                    <div class="card-top">
+                        <div class="cat-icon-box"><i class="fa-solid fa-scissors"></i></div>
+                        <span class="cat-badge">21 Products</span>
+                    </div>
+                    <div class="cat-title">Herbicides & Weedicides</div>
+                    <div class="cat-desc">Selective and non-selective weed control solutions for all major agricultural crops.</div>
+                    <div class="cat-action">Explore 21 Herbicides <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- Category 4: Plant Growth Regulators (PGR) -->
+            <div class="category-card" onclick="showCategory('PGR', '🌱 Plant Growth Regulators (PGR)')">
+                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=600&q=80" alt="Plant Growth Regulators" class="cat-img-banner">
+                <div class="cat-card-body">
+                    <div class="card-top">
+                        <div class="cat-icon-box"><i class="fa-solid fa-seedling"></i></div>
+                        <span class="cat-badge">6 Products</span>
+                    </div>
+                    <div class="cat-title">Plant Growth Regulators</div>
+                    <div class="cat-desc">Growth stimulants, flower boosters, and yield enhancers engineered for maximum output.</div>
+                    <div class="cat-action">Explore 6 PGRs <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- Category 5: Rodenticides -->
+            <div class="category-card" onclick="showCategory('RODENTICIDES', '🐀 Rodenticides')">
+                <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=600&q=80" alt="Rodenticides" class="cat-img-banner">
+                <div class="cat-card-body">
+                    <div class="card-top">
+                        <div class="cat-icon-box"><i class="fa-solid fa-shield-virus"></i></div>
+                        <span class="cat-badge">4 Products</span>
+                    </div>
+                    <div class="cat-title">Rodenticides</div>
+                    <div class="cat-desc">Fast-acting rodent control baits and powders for fields, grain stores, and warehouses.</div>
+                    <div class="cat-action">Explore 4 Rodenticides <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- Category 6: Antibiotic -->
+            <div class="category-card" onclick="showCategory('ANTIBIOTIC', '🧪 Agricultural Antibiotics')">
+                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80" alt="Antibiotics" class="cat-img-banner">
+                <div class="cat-card-body">
+                    <div class="card-top">
+                        <div class="cat-icon-box"><i class="fa-solid fa-vial-virus"></i></div>
+                        <span class="cat-badge">1 Product</span>
+                    </div>
+                    <div class="cat-title">Antibiotics</div>
+                    <div class="cat-desc">Specialized anti-bacterial formulation for crop protection and disease management.</div>
+                    <div class="cat-action">Explore Antibiotics <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
         </div>
-      </div>
 
-    </div>
-  </section>
+        <!-- PRODUCTS LISTING VIEW (Appears when a category card is clicked) -->
+        <div class="products-view" id="products-view">
+            <div class="products-header">
+                <div>
+                    <button class="back-btn" onclick="showCategories()"><i class="fa-solid fa-arrow-left"></i> Back to Categories</button>
+                    <div style="margin-top: 15px;">
+                        <span class="active-cat-title" id="active-cat-title">
+                            Insecticides <span class="active-cat-count" id="active-cat-count">75 Items</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="product-search" placeholder="Search product name..." onkeyup="filterProducts()">
+                </div>
+            </div>
 
-  <!-- ABOUT / CONTACT BANNER -->
-  <section id="contact" class="container">
-    <div class="contact-bar">
-      <h2>ISO Certified Manufacturing & Formulation Unit</h2>
-      <p>Headquartered in Hapur, Uttar Pradesh | Trusted Supplier across India, Nepal, and Cambodia</p>
-      <a href="https://wa.me/" class="btn">Get in Touch on WhatsApp</a>
-    </div>
-  </section>
+            <div class="products-grid" id="products-grid">
+                <!-- Products inserted dynamically via JS -->
+            </div>
+        </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 Pesticides Chemical India. All rights reserved.</p>
-  </footer>
+    </section>
 
+    <!-- 5. About Section -->
+    <section class="about-section" id="about">
+        <div class="section-header">
+            <h3>Why Choose Pesticides Chemical India?</h3>
+            <p>Trusted formulation expertise committed to agricultural prosperity</p>
+            <div class="title-bar"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-box">
+                <h4><i class="fa-solid fa-boxes-stacked" style="color:var(--primary);"></i> Complete Range</h4>
+                <p>130 technical and CIB-registered chemical formulations tailored for diverse crops and climates.</p>
+            </div>
+            <div class="about-box">
+                <h4><i class="fa-solid fa-earth-asia" style="color:var(--primary);"></i> Export Presence</h4>
+                <p>Actively exporting agricultural chemicals to Nepal, Cambodia, and pan-India distribution hubs.</p>
+            </div>
+            <div class="about-box">
+                <h4><i class="fa-solid fa-flask" style="color:var(--primary);"></i> Quality Assurance</h4>
+                <p>Strict quality control tests in certified laboratories to ensure maximum field efficacy for farmers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer with Direct WhatsApp Link to 9897547705 -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>PESTICIDES CHEMICAL INDIA</h4>
+                <p>Leading agro-chemical manufacturer dedicated to providing premium crop protection solutions.</p>
+                <p><i class="fa-solid fa-location-dot"></i> Hapur, Uttar Pradesh, India</p>
+            </div>
+            <div class="footer-col">
+                <h4>Product Categories</h4>
+                <ul>
+                    <li><a href="#catalog" onclick="showCategory('INSECTICIDES', '🐛 Insecticides')">Insecticides (75)</a></li>
+                    <li><a href="#catalog" onclick="showCategory('FUNGICIDES', '🍄 Fungicides')">Fungicides (23)</a></li>
+                    <li><a href="#catalog" onclick="showCategory('HERBICIDES', '🌾 Herbicides & Weedicides')">Herbicides & Weedicides (21)</a></li>
+                    <li><a href="#catalog" onclick="showCategory('PGR', '🌱 Plant Growth Regulators (PGR)')">Plant Growth Regulators (6)</a></li>
+                    <li><a href="#catalog" onclick="showCategory('RODENTICIDES', '🐀 Rodenticides')">Rodenticides (4)</a></li>
+                    <li><a href="#catalog" onclick="showCategory('ANTIBIOTIC', '🧪 Agricultural Antibiotics')">Antibiotic (1)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Inquiries</h4>
+                <p>Email: pesticideschemicalindia@gmail.com</p>
+                <p>Location: Hapur, UP, India</p>
+                <p>Phone: +91 9897547705</p>
+                <!-- WHATSAPP DIRECT TO 9897547705 -->
+                <p style="margin-top:15px;">
+                    <a href="https://wa.me/919897547705?text=Hello%20Pesticides%20Chemical%20India%20Team,%20I%20have%20an%20inquiry." class="cta-btn" target="_blank" style="padding: 8px 16px; font-size: 0.85rem;">
+                        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Pesticides Chemical India. All rights reserved. Designed for optimal field performance.
+        </div>
+    </footer>
+
+    <!-- EMBEDDED PRODUCTS DATA & INTERACTIVE SCRIPT -->
+    <script>
+        const PRODUCTS_DATA = {
+  "INSECTICIDES": [
+    "Acephate 75% SP",
+    "Acetamiprid 20% SP",
+    "Alpha Cypermethrin 10% EC",
+    "Alpha Cypermethrin 10% SC",
+    "Alpha Cypermethrin 5% WP",
+    "Aluminium Phosphide 56% (f) Tablet",
+    "Beta Cyfluthrin 2.45% S.C",
+    "Bifenthrin 10% EC",
+    "Bifenthrin 10% WP",
+    "Bifenthrin 2.5% EC",
+    "Buprofezin 15% + Acephate 35% WP for indigenous manufacture",
+    "Buprofezin 25% SC",
+    "Cartap Hydrochloride 4% GR",
+    "Cartap Hydrochloride 50% SP",
+    "Chlorantraniliprole 0.4%  w/w GR",
+    "Chlorantraniliprole 18.5% w/w SC",
+    "Chlorpyrifos 16% + Alphacypermethrin 1% E.C",
+    "Chlorpyriphos 10% GR",
+    "Chlorpyriphos 2% RTU",
+    "CHLORPYRIPHOS 20% CS",
+    "Chlorpyriphos 20% EC",
+    "Chlorpyriphos 50% + Cypermethrin 5% EC",
+    "Chlorpyriphos 50% EC",
+    "Cypermethrin 0.25% DP",
+    "Cypermethrin 1.0% chalk",
+    "Cypermethrin 10% EC",
+    "Cypermethrin 25% EC",
+    "Cypermethrin 0.25% DP",
+    "Deltamethrin 1.25% ULV",
+    "Deltamethrin 11%  w/w EC",
+    "Deltamethrin 2.5% FLOW",
+    "Deltamethrin 2.5% WP",
+    "Diafenthiuron 50% WP",
+    "Dimethoate 30% EC",
+    "Emamectin Benzoate 1.5% + Fipronil 3.5% SC for indigenous manufacture",
+    "Emamectin Benzoate 1.9% EC",
+    "EMAMECTIN BENZOATE 3.0% + THIAMETHOXAM 12.0% WG",
+    "Emamectin Benzoate 5% SG",
+    "Ethion 40% + Cypermethrin 5% EC",
+    "Ethion 50% EC",
+    "Fenvalerate 20% EC",
+    "Fipronil 0.05% GEL",
+    "Fipronil 0.3% G.R.",
+    "Fipronil 2.92% EC",
+    "Fipronil 4% w/w + Thiamethoxam 4% w/w SC forindigenous manufacture",
+    "Fipronil 40% + Imidacloprid 40% WG",
+    "Fipronil 5% SC",
+    "Fironil 80% WDG",
+    "Imidacloprid 17.8% SL",
+    "Imidacloprid 30.5% SC",
+    "Imidacloprid 48% FS",
+    "Imidacloprid 70% WG",
+    "Indoxacarb 14.5% SC",
+    "Lambda Cyhalothrin 10% WP",
+    "Lambda Cyhalothrin 2.5% EC",
+    "Lambda Cyhalothrin 4.9% CS",
+    "Lambda Cyhalothrin 5% EC",
+    "Malathion 50% EC",
+    "Malathion-5% D.P.",
+    "Monocrotophos 36% SL",
+    "Novaluron 5.25% + Indoxacarb 4.5% SC",
+    "Phenthoate 50% EC",
+    "Profenofos 40% + Cypermethrin 4% EC",
+    "Profenofos 50% EC",
+    "Propoxur 1% spray",
+    "Propoxur 20% E.C.",
+    "Pymetrozine 50% WG",
+    "Pyriproxyfen 10% + Bifenthrin 10% EC for indigenous manufacture",
+    "Quinalphos 25% EC",
+    "Temephos 50% EC",
+    "Thiamethoxam 12.6% + Lambda Cyhalothrin 9.5% ZC for indigenous manufacture",
+    "Thiamethoxam 25% WG",
+    "Thiamethoxam 30% FS",
+    "Thiamethoxam 75%  w/w SG",
+    "Transfluthrin 1.6%w/w LV"
+  ],
+  "FUNGICIDES": [
+    "Azoxystrobin 11% + Tebuconazole 18.3% SC",
+    "AZOXYSTROBIN 11.5% + MANCOZEB 30% w/w WP",
+    "Captan 50% WP",
+    "Captan 70% + Hexaconazole 5% WP",
+    "Carbendazim 12% + Mancozeb 63% WP",
+    "Carbendazim 50% WP",
+    "Chlorothalonil 75% WP",
+    "Cymoxanil 8% + Mancozeb 64% WP",
+    "Difenoconazole 25% EC",
+    "Hexaconazole 5% EC",
+    "Hexaconazole 5% SC",
+    "Metalaxyl 35% WS",
+    "Metalaxyl 8% + Mancozeb 64% WP",
+    "Mancozeb 75% WP",
+    "Propiconazole 13.9% + Difenoconazole 13.9% EC",
+    "Propiconazole 25% EC",
+    "Propineb 70% WP",
+    "Sulphur 55.16% SC",
+    "Sulphur 80% WDG",
+    "Tebuconazole 10% + Sulphur 65% WG",
+    "Tebuconazole 25.9% EC",
+    "Thiophanate Methyl 70% WP",
+    "Tricyclazole 75% WP"
+  ],
+  "HERBICIDES": [
+    "2,4-D Anime Salt -58% SL",
+    "Atrazine 50% WP",
+    "Bispyribac Sodium 10%  w/w SC",
+    "Butachlor 50% EC",
+    "Chlorimuron Ethyl 25% WP",
+    "Clodinafop Propargyl 15% WP",
+    "Fenoxaprop P Ethyl 9.3% EC",
+    "Glyphosate 41% SL",
+    "Imazethapyr 10% SL",
+    "Imazethapyr 70% WG",
+    "IPA Salt of Glyphosate 54% SL for indigenous manufacture",
+    "Metribuzin 70% WP",
+    "Metsulfuron Methyl 10% + Chlorimuron Ethyl 10% WP",
+    "Metsulfuron Methyl 20% WP",
+    "Oxyfluorfen 23.5% EC (w/w)",
+    "Paraquat Dichloride 24% SL",
+    "Pendimethalin 30% EC",
+    "Pendimethalin 38.7% CS",
+    "Pretilachlor 37% w/w EW",
+    "Pretilachlor 50% EC",
+    "Quizalofop Ethyl 10% EC"
+  ],
+  "RODENTICIDES": [
+    "Bromadiolone 0.005% R.B.",
+    "Zinc Phosphide 1% Bait",
+    "Zinc Phosphide 2% RB",
+    "Zinc Phosphide 80% W/W"
+  ],
+  "ANTIBIOTIC": [
+    "Validamycin 3% L"
+  ],
+  "PGR": [
+    "Chlormequat Chloride 50% SOL",
+    "Ethephon 39% SL",
+    "Forchlorfenuron (CPPU) 0.1% Liquid",
+    "Gibberellic Acid 0.001% L",
+    "Paclobutrazole 23% SC",
+    "Triacontanol EW 0.1% MIN."
+  ]
+};
+
+        let currentActiveCategoryKey = '';
+
+        function showCategory(catKey, catDisplayName) {
+            currentActiveCategoryKey = catKey;
+            const items = PRODUCTS_DATA[catKey] || [];
+            
+            document.getElementById('active-cat-title').innerHTML = `${catDisplayName} <span class="active-cat-count">${items.length} Items</span>`;
+            document.getElementById('product-search').value = '';
+
+            renderProducts(items);
+
+            document.getElementById('categories-grid').style.display = 'none';
+            document.getElementById('section-header-box').style.display = 'none';
+
+            const prodView = document.getElementById('products-view');
+            prodView.style.display = 'block';
+
+            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showCategories() {
+            document.getElementById('products-view').style.display = 'none';
+            document.getElementById('categories-grid').style.display = 'grid';
+            document.getElementById('section-header-box').style.display = 'block';
+            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function renderProducts(items) {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+
+            if(items.length === 0) {
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">No products found matching your search.</div>';
+                return;
+            }
+
+            items.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                
+                card.innerHTML = `
+                    <div class="prod-num">Item #${index + 1}</div>
+                    <div class="prod-name">${item}</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterProducts() {
+            const query = document.getElementById('product-search').value.toLowerCase().trim();
+            const items = PRODUCTS_DATA[currentActiveCategoryKey] || [];
+            const filtered = items.filter(item => item.toLowerCase().includes(query));
+            renderProducts(filtered);
+        }
+    </script>
 </body>
 </html>
