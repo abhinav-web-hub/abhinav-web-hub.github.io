@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -458,8 +458,9 @@
             transition: var(--transition);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
             position: relative;
+            overflow: hidden;
         }
 
         .product-card:hover {
@@ -469,11 +470,35 @@
             box-shadow: 0 12px 20px -5px rgba(0,0,0,0.06);
         }
 
+        /* Product Card Insect Image Styling */
+        .product-card-img {
+            width: 100%;
+            height: 135px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .target-pest-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--secondary);
+            background: #d1fae5;
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            width: fit-content;
+        }
+
         .prod-header-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .prod-num {
@@ -587,7 +612,7 @@
 </head>
 <body>
 
-    <!-- Top Bar -->
+    <!-- 1. Top Bar -->
     <div class="top-bar">
         <div class="top-info">
             <span><i class="fa-solid fa-location-dot"></i> Hapur, Uttar Pradesh, India</span>
@@ -598,7 +623,7 @@
         </div>
     </div>
 
-    <!-- Navbar -->
+    <!-- 2. Navbar with Direct WhatsApp Link -->
     <nav>
         <a href="#" class="logo-container">
             <img src="logo.png" alt="PCI Logo" class="logo-img" onerror="this.style.display='none'">
@@ -618,7 +643,7 @@
         </a>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- 3. Hero Section -->
     <section class="hero" id="hero">
         <h2>Pesticides Chemical India</h2>
         <p>Manufacturer, Formulator & Exporter of High-Grade Insecticides, Fungicides, Herbicides, PGRs & Rodenticides.</p>
@@ -629,7 +654,7 @@
         </div>
     </section>
 
-    <!-- Interactive Catalog Section -->
+    <!-- 4. Interactive Catalog Section -->
     <section class="catalog-container" id="catalog">
         
         <!-- SECTION TITLE -->
@@ -642,9 +667,9 @@
         <!-- CATEGORIES CARDS GRID -->
         <div class="categories-grid" id="categories-grid">
             
-            <!-- Category 1: Insecticides (Insect Cover Image) -->
+            <!-- Category 1: Insecticides -->
             <div class="category-card" onclick="showCategory('INSECTICIDES', '🐛 Insecticides')">
-                <img src="https://images.unsplash.com/photo-1551258013-0309e3e78f24?auto=format&fit=crop&w=800&q=80" alt="Insect Pest Protection" class="cat-img-banner">
+                <img src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=800&q=80" alt="Insecticides Pest Control" class="cat-img-banner">
                 <div class="cat-card-body">
                     <div class="card-top">
                         <div class="cat-icon-box"><i class="fa-solid fa-bug"></i></div>
@@ -658,7 +683,7 @@
 
             <!-- Category 2: Fungicides -->
             <div class="category-card" onclick="showCategory('FUNGICIDES', '🍄 Fungicides')">
-                <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=600&q=80" alt="Fungicides" class="cat-img-banner">
+                <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=600&q=80" alt="Fungicides" class="cat-img-banner" onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80'">
                 <div class="cat-card-body">
                     <div class="card-top">
                         <div class="cat-icon-box"><i class="fa-solid fa-plant-wilt"></i></div>
@@ -672,7 +697,7 @@
 
             <!-- Category 3: Herbicides / Weedicides -->
             <div class="category-card" onclick="showCategory('HERBICIDES', '🌾 Herbicides & Weedicides')">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="Herbicides" class="cat-img-banner">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="Herbicides" class="cat-img-banner" onerror="this.src='https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=600&q=80'">
                 <div class="cat-card-body">
                     <div class="card-top">
                         <div class="cat-icon-box"><i class="fa-solid fa-scissors"></i></div>
@@ -686,7 +711,7 @@
 
             <!-- Category 4: Plant Growth Regulators (PGR) -->
             <div class="category-card" onclick="showCategory('PGR', '🌱 Plant Growth Regulators (PGR)')">
-                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=600&q=80" alt="Plant Growth Regulators" class="cat-img-banner">
+                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=600&q=80" alt="Plant Growth Regulators" class="cat-img-banner" onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80'">
                 <div class="cat-card-body">
                     <div class="card-top">
                         <div class="cat-icon-box"><i class="fa-solid fa-seedling"></i></div>
@@ -700,7 +725,7 @@
 
             <!-- Category 5: Rodenticides -->
             <div class="category-card" onclick="showCategory('RODENTICIDES', '🐀 Rodenticides')">
-                <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=600&q=80" alt="Rodenticides" class="cat-img-banner">
+                <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=600&q=80" alt="Rodenticides" class="cat-img-banner" onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80'">
                 <div class="cat-card-body">
                     <div class="card-top">
                         <div class="cat-icon-box"><i class="fa-solid fa-shield-virus"></i></div>
@@ -714,7 +739,7 @@
 
             <!-- Category 6: Antibiotic -->
             <div class="category-card" onclick="showCategory('ANTIBIOTIC', '🧪 Agricultural Antibiotics')">
-                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80" alt="Antibiotics" class="cat-img-banner">
+                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80" alt="Antibiotics" class="cat-img-banner" onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80'">
                 <div class="cat-card-body">
                     <div class="card-top">
                         <div class="cat-icon-box"><i class="fa-solid fa-vial-virus"></i></div>
@@ -752,7 +777,7 @@
 
     </section>
 
-    <!-- About Section -->
+    <!-- 5. About Section -->
     <section class="about-section" id="about">
         <div class="section-header">
             <h3>Why Choose Pesticides Chemical India?</h3>
@@ -775,7 +800,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 6. Footer -->
     <footer id="contact">
         <div class="footer-grid">
             <div class="footer-col">
@@ -813,6 +838,30 @@
 
     <!-- EMBEDDED PRODUCTS DATA & INTERACTIVE SCRIPT -->
     <script>
+        // Insect Images Library for Insecticides Section
+        const INSECT_IMAGES = [
+            {
+                url: "https://images.unsplash.com/photo-1592417817098-8f3d6ef23a8c?auto=format&fit=crop&w=500&q=80",
+                target: "Sucking Pests / Aphids & Thrips"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=500&q=80",
+                target: "Beetles & Chewing Insects"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=500&q=80",
+                target: "Locusts & Grasshoppers"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1551258013-0309e3e78f24?auto=format&fit=crop&w=500&q=80",
+                target: "Caterpillars & Cutworms"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=500&q=80",
+                target: "Whiteflies & Mites"
+            }
+        ];
+
         const PRODUCTS_DATA = {
             "INSECTICIDES": [
                 "Acephate 75% SP",
@@ -964,11 +1013,11 @@
             activeCount.innerText = items.length + " Items";
             searchInput.value = '';
 
-            renderProducts(items);
+            renderProducts(items, catKey);
             window.scrollTo({ top: document.getElementById('catalog').offsetTop - 80, behavior: 'smooth' });
         }
 
-        function renderProducts(items) {
+        function renderProducts(items, catKey) {
             const prodGrid = document.getElementById('products-grid');
             prodGrid.innerHTML = '';
 
@@ -980,7 +1029,19 @@
             items.forEach((item, index) => {
                 const card = document.createElement('div');
                 card.className = 'product-card';
+
+                let insectImgHTML = '';
+                // Inject Insect Images for Insecticides category
+                if (catKey === 'INSECTICIDES') {
+                    const insectData = INSECT_IMAGES[index % INSECT_IMAGES.length];
+                    insectImgHTML = `
+                        <img src="${insectData.url}" alt="Pest Control - ${item}" class="product-card-img" loading="lazy">
+                        <span class="target-pest-badge"><i class="fa-solid fa-bug"></i> ${insectData.target}</span>
+                    `;
+                }
+
                 card.innerHTML = `
+                    ${insectImgHTML}
                     <div class="prod-header-row">
                         <span class="prod-num">PCI-${(index + 1).toString().padStart(3, '0')}</span>
                     </div>
@@ -994,7 +1055,7 @@
             const query = document.getElementById('product-search').value.toLowerCase();
             const items = PRODUCTS_DATA[currentCategoryKey] || [];
             const filtered = items.filter(item => item.toLowerCase().includes(query));
-            renderProducts(filtered);
+            renderProducts(filtered, currentCategoryKey);
         }
 
         function showCategories() {
